@@ -1,5 +1,5 @@
 import React from "react";
-import HomeRegister from "../../components/HomeRegister";
+import HomeRegister from "../../components/homeComponents/HomeRegister";
 import logo from "../../media/cloud.svg";
 import sun from "../../media/sun.svg";
 import homepageVideo from "../../media/homepage.mp4";

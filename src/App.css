@@ -1,19 +1,14 @@
 body {
-
-  overflow: hidden;
-  min-height: 100vh;
   user-select: none;
+  min-height: 100vh;
+  overflow-y: hidden;
+
 }
 
 
 
 .app {
   display: flex;
-  flex-direction: column;
   row-gap: 50px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 20px;
+  /* border: 4px solid green; */
 }

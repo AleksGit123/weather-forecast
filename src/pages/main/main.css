@@ -1,11 +1,11 @@
 .main__section {
-    border: 2px solid red;
     width: 100%;
     display: grid;
     height: 100vh;
     align-content: center;
-    grid-template-columns: 140px 426px 650px;
-    grid-template-rows: 60px 280px 180px 130px;
+    /* grid-template-columns: 140px 400px 400px 650px; */
+    grid-template-columns: 0.2fr 0.7fr 0.7fr 0.4fr;
+    grid-template-rows: 60px 230px 180px 180px;
     grid-template-areas:
         "menu search search week"
         "menu current current week"
@@ -13,12 +13,12 @@
         "menu details details week"
     ;
     gap: 10px 10px;
-    background-color: #75B4E3;
-
+    background-color: #0B131E;
+    padding-inline: 10px;
 }
 
-.main__section>div:not(:nth-child(3)) {
-    background-color: #245A81;
+.main__section>section:not(:nth-child(3)) {
+    background-color: #202B3B;
     border-radius: 15px;
 }
 
@@ -28,8 +28,7 @@
     font-style: normal;
 }
 
-.menu__div {
-    background-color: green;
+.menu__sect {
     grid-area: menu;
 }
 
@@ -40,22 +39,35 @@
 }
 
 .hourly__weather {
-    background-color: yellow;
     grid-area: hourly;
 }
 
 .details {
-    background-color: red;
     grid-area: details;
 }
 
 .week__forecast {
-    background-color: black;
     grid-area: week;
 }
 
 .search {
     grid-area: search;
     height: 60px;
-    border: 2px solid green;
+    color: #d2dae7;
+}
+
+.search:hover,
+.search:focus {
+    border: 3px solid #2b235a;
+    background-color: transparent;
+}
+
+/* menu__Sect */
+
+.menu__sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding-top: 30px;
 }

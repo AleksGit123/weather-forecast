@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu";
+import Menu from "./menu/Menu";
 import Current from "./Current";
 import Hourly from "./Hourly";
 import Details from "./Details";
@@ -14,21 +14,21 @@ const MainSect = () => {
         placeholder="Search"
         className="search abelFont"
       />
-      <div className="menu__div">
+      <section className="menu__sect">
         <Menu />
-      </div>
-      <div className="current__weather">
+      </section>
+      <section className="current__weather">
         <Current />
-      </div>
-      <div className="hourly__weather">
+      </section>
+      <section className="hourly__weather">
         <Hourly />
-      </div>
-      <div className="details">
+      </section>
+      <section className="details">
         <Details />
-      </div>
-      <div className="week__forecast">
+      </section>
+      <section className="week__forecast">
         <Week />
-      </div>
+      </section>
     </>
   );
 };
