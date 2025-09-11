@@ -1,0 +1,11 @@
+.text__div {
+    border: 2px solid green;
+    width: 230px;
+    height: 100%;
+    
+}
+
+.countnry {
+    color: #FFFFFF;
+    font-size: 32px;
+}

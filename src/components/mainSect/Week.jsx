@@ -4,4 +4,4 @@ const Week = () => {
   return <div>Week</div>;
 };
 
-export default Week;
+export default React.memo(Week);

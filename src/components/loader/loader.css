@@ -1,0 +1,93 @@
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 25px;
+    z-index: 1000;
+}
+
+.loader__text {
+    position: relative;
+    font-size: 55px;
+    color: #FFFFFF;
+}
+
+.loader span {
+    display: inline-block;
+    animation: loader 2s infinite;
+}
+
+.loader .l {
+    animation-delay: 0.1s;
+
+}
+
+.loader .o {
+    animation-delay: 0.3s;
+}
+
+.loader .a {
+    animation-delay: 0.5s;
+}
+
+.loader .d {
+    animation-delay: 0.7s;
+}
+
+.loader .i {
+    animation-delay: 0.9s;
+}
+
+.loader .n {
+    animation-delay: 1s;
+}
+
+.loader .g {
+    animation-delay: 1.2s;
+}
+
+.loader .dot1 {
+    animation: loader 2s infinite;
+    animation-delay: 1.4s;
+}
+
+.loader .dot2 {
+    animation: loader 2s infinite;
+    animation-delay: 1.6s;
+}
+
+.loader .dot3 {
+    animation: loader 2s infinite;
+    animation-delay: 1.8s;
+}
+
+@keyframes loader {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.background {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #202b3b;
+}
+
+.background.hidden {
+    display: none;
+}
