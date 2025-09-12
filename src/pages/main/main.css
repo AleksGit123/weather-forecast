@@ -1,13 +1,12 @@
 .main__section {
     width: 100%;
     display: grid;
-    height: 100vh;
     align-content: center;
-    /* grid-template-columns: 140px 400px 400px 650px; */
+    /* border: 2px solid green; */
     grid-template-columns: 0.2fr 0.7fr 0.7fr 0.4fr;
-    grid-template-rows: 60px 230px 180px 180px;
+    grid-template-rows: minmax(60px, auto) minmax(230px, auto) minmax(180px, auto) minmax(180px, auto);
     grid-template-areas:
-        "menu search search week"
+        "menu current current week"
         "menu current current week"
         "menu hourly hourly week"
         "menu details details week"
@@ -17,7 +16,7 @@
     padding-inline: 10px;
 }
 
-.main__section>section:not(:nth-child(3)) {
+.main__section>section:not(:nth-child(2)) {
     background-color: #202B3B;
     border-radius: 15px;
 }
@@ -29,9 +28,14 @@
 }
 
 .current__weather {
+    display: flex;
+    row-gap: 50px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: transparent;
-    border: 2px solid black;
     grid-area: current;
+    padding: 10px;
 }
 
 .hourly__weather {

@@ -1,11 +1,45 @@
-.text__div {
-    border: 2px solid green;
-    width: 230px;
+.display__current {
+    width: 100%;
     height: 100%;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.countnry {
+.text__div {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 230px;
+    height: 100%;
     color: #FFFFFF;
+}
+
+.country {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.city {
+    color: #3e5eb0;
     font-size: 32px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.temp {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+/* icons div */
+.img__div {
+    width: 150px;
+    height: 150px
+}
+
+.weather__icon {
+    width: 100%;
+    height: 100%;
 }

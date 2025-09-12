@@ -10,21 +10,18 @@ import Loader from "../loader/Loader";
 const MainSect = () => {
   // console.log(data);
   const [loader, setLoader] = useState(false);
+
+  let handleValue = () => {};
   return (
     <>
       {loader && <Loader loader={loader} />}
-      <input
-        type="text"
-        id="search"
-        placeholder="Search"
-        className="search abelFont"
-      />
+
       <section className="menu__sect">
         <Menu />
       </section>
 
       <section className="current__weather">
-        <Current setLoader={setLoader} />
+        <Current loader = {loader} setLoader={setLoader} />
       </section>
 
       <section className="hourly__weather">
