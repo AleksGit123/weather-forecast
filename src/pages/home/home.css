@@ -16,6 +16,67 @@
     border-radius: 25px;
 }
 
+.alert_text {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.alert_text.alert_animation {
+    animation: alert 7s linear forwards;
+}
+
+.alert_text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 4px;
+    background-color: red;
+    box-shadow: 0 0 5px #ff0000;
+    animation: underline 6s linear .4s forwards;
+
+}
+
+@keyframes alert {
+    0% {
+        top: -150px;
+        opacity: 0;
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        top: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        top: -150px;
+        opacity: 0;
+    }
+}
+
+@keyframes underline {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
 
 #bg_video {
     width: 100%;
@@ -148,17 +209,15 @@ input {
 input.correct {
 
     background-color: rgba(52, 234, 116, 0.189);
-    border-color: rgba(52, 234, 116, 0.189);
 }
 
 input.incorrect {
     background-color: rgba(148, 42, 42, 0.683);
-    border-color: rgba(148, 42, 42, 0.683);
 }
 
 
 ::placeholder {
-    color: #2b235a;
+    color: #2b235a9c;
 }
 
 input:hover {
@@ -241,4 +300,54 @@ input:hover {
 .home__btn:hover {
     background-color: #2b235a;
     color: #fff;
+}
+
+/* userNameDiv */
+.uername__div {
+    position: relative;
+    width: 300px;
+    height: 46px;
+    /* border: 2px solid red; */
+}
+
+#userName {
+    position: absolute;
+    top: -150px;
+    width: 100%;
+    height: 100%;
+    animation: userName 0.3s linear 0.2s forwards;
+}
+
+@keyframes userName {
+    from {
+        top: -150px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+.to_signup {
+    color: #2b235a;
+    text-shadow: 0 0 5px #fff;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.signup {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: .4s;
+    margin-left: 10px;
+}
+
+.signup:hover {
+    transform: translateY(-5px);
+    color: #0b0963;
+}
+
+.hidden {
+    display: none;
 }

@@ -1,4 +1,5 @@
 .main__section {
+    position: relative;
     width: 100%;
     display: grid;
     align-content: center;
@@ -6,7 +7,7 @@
     grid-template-columns: 0.2fr 0.7fr 0.7fr 0.4fr;
     grid-template-rows: minmax(60px, auto) minmax(230px, auto) minmax(180px, auto) minmax(180px, auto);
     grid-template-areas:
-        "menu current current week"
+        "menu search search week"
         "menu current current week"
         "menu hourly hourly week"
         "menu details details week"
@@ -16,7 +17,7 @@
     padding-inline: 10px;
 }
 
-.main__section>section:not(:nth-child(2)) {
+.main__section>section:not(:nth-child(3)) {
     background-color: #202B3B;
     border-radius: 15px;
 }

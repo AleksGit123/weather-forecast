@@ -1,27 +1,72 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import Menu from "./menu/Menu";
-import Current from "./current/Current";
-import Hourly from "./Hourly";
+import Hourly from "./hourly/Hourly";
 import Details from "./Details";
 import Week from "./Week";
 import Loader from "../loader/Loader";
-
+import WeatherContextProvider, {
+  useWeatherContext,
+} from "../../context/WeatherContextProvider";
+import getData from "../../constants/api";
+import Current from "./current/Current";
 const MainSect = () => {
-  // console.log(data);
+  const { state, dispatch } = useWeatherContext();
   const [loader, setLoader] = useState(false);
+  const [error, setError] = useState("");
+  const [value, setValue] = useState("");
 
-  let handleValue = () => {};
+  let data = async (value) => {
+    setLoader(true);
+    getData(value)
+      .then((data) => {
+        dispatch({
+          ...state,
+          type: "current_temp",
+          payload: data.current.temp_c,
+        });
+        dispatch({ ...state, type: "location", payload: data.location });
+        dispatch({
+          ...state,
+          type: "hourly",
+          payload: data.forecast.forecastday[0].hour,
+        });
+        dispatch({
+          ...state,
+          type: "week",
+          payload: data.forecast.forecastday,
+        });
+      })
+      .then((err) => setError(err))
+      .finally(() => {
+        setLoader(false);
+      });
+  };
+
   return (
     <>
       {loader && <Loader loader={loader} />}
 
+      <input
+        type="text"
+        id="search"
+        placeholder="Search"
+        className="search abelFont"
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            data(value);
+          }
+        }}
+      />
       <section className="menu__sect">
         <Menu />
       </section>
 
       <section className="current__weather">
-        <Current loader = {loader} setLoader={setLoader} />
+        <Current loader={loader} setLoader={setLoader} />
       </section>
 
       <section className="hourly__weather">
