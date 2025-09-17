@@ -72,3 +72,11 @@ input {
     color: #FFFFFF;
     transform: translateY(-5px);
 }
+
+input.correct {
+    background-color: rgba(52, 234, 116, 0.189);
+}
+
+input.incorrect {
+    background-color: rgba(148, 42, 42, 0.683);
+}

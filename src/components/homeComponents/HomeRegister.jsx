@@ -85,12 +85,16 @@ const HomeRegister = ({ setAlert }) => {
           onClick={() => {
             if (
               !user ||
-              state.user.email !== user.email ||
-              state.user.password !== user.password
+              value.email !== user.email ||
+              value.password !== user.password
             ) {
               setAlert("Sign Up Yet");
               console.log("no user");
-            } else if (user) {
+            } else if (
+              user &&
+              user.email === value.email &&
+              user.password === value.password
+            ) {
               navigate("/main");
               dispatch({ ...state, log_in: true });
               console.log(state);

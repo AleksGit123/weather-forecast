@@ -39,7 +39,21 @@
     height: 150px
 }
 
-.weather__icon {
-    width: 100%;
+/* weather div */
+.detail_weather__div {
+    display: grid;
     height: 100%;
+    padding-top: 20px;
+    place-items: center;
+}
+
+.weather__icon {
+    width: 128px;
+    height: 128px;
+}
+
+.description {
+    color: #FFFFFF;
+    font-size: 24px;
+
 }

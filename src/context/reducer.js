@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
 
+
 export const initialState = {
     current: "",
+    condition:{
+        icon:"",
+        text:""
+    },
     location:{
         country:"Country",
-        city:"City"
+        name:"City",  
     },
+
+
     hourly:[],
     week:[],
     user: {
@@ -18,13 +25,24 @@ export const initialState = {
     sign_up:false,
 }
 
-
 export const reducer = (state,action) =>{
     let {type,payload} = action;
 
     switch(type){
         case "current_temp" : return {...state,current:payload}
-        case "location" : return {...state,location:payload}
+        case "location" : return {...state,location:{
+            ...state.location,
+            country:payload.country,
+            name:payload.name,
+     
+        }}
+        case "condition" : return {...state,
+            condition: {
+                ...state.condition,
+                text:payload.text,
+                icon:payload.icon,
+            }
+        }
         case "hourly" : return {...state,hourly:payload}
         case "week" : return {...state,week:payload}
         case "valid" : return {...state,valid:payload}

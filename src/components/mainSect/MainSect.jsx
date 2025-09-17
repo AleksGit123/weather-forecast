@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Menu from "./menu/Menu";
 import Hourly from "./hourly/Hourly";
-import Details from "./Details";
+import Details from "./details/Details";
 import Week from "./Week";
 import Loader from "../loader/Loader";
 import WeatherContextProvider, {
@@ -20,19 +20,19 @@ const MainSect = () => {
     setLoader(true);
     getData(value)
       .then((data) => {
+        console.log(data);
         dispatch({
-          ...state,
           type: "current_temp",
           payload: data.current.temp_c,
         });
-        dispatch({ ...state, type: "location", payload: data.location });
+        dispatch({ type: "condition", payload: { ...data.current.condition } });
+        dispatch({ type: "location", payload: { ...data.location } });
+
         dispatch({
-          ...state,
           type: "hourly",
           payload: data.forecast.forecastday[0].hour,
         });
         dispatch({
-          ...state,
           type: "week",
           payload: data.forecast.forecastday,
         });

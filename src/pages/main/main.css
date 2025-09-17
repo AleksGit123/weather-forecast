@@ -3,7 +3,6 @@
     width: 100%;
     display: grid;
     align-content: center;
-    /* border: 2px solid green; */
     grid-template-columns: 0.2fr 0.7fr 0.7fr 0.4fr;
     grid-template-rows: minmax(60px, auto) minmax(230px, auto) minmax(180px, auto) minmax(180px, auto);
     grid-template-areas:

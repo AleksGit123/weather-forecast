@@ -1,0 +1,51 @@
+.hourly__weather {
+    display: flex;
+    column-gap: 15px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-block: 10px;
+}
+
+.hourly__weather::-webkit-scrollbar {
+    height: 8px;
+}
+
+
+.hourly__weather::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* სქროლის "თამბის" (მოძრავი ნაწილის) სტილი */
+.hourly__weather::-webkit-scrollbar-thumb {
+    background: #1e2c68;
+    border-radius: 10px;
+    cursor:grab;
+}
+
+/* თამბის ფერის შეცვლა, როცა მაუსი ადევს */
+.hourly__weather::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+
+.hourly__card {
+    display: grid;
+    flex: 1 0 140px;
+    place-items: center;
+    padding-right: 20px;
+}
+
+.hourly__card:not(:last-child) {
+    border-right: 2px solid #ffffff;
+}
+
+.hourly__icon {
+    width: 80%;
+    height: auto;
+}
+
+.hour {
+    color: #FFFFFF;
+    font-size: 20px;
+}
