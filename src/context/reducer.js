@@ -11,8 +11,7 @@ export const initialState = {
         country:"Country",
         name:"City",  
     },
-
-
+    feedback:"",
     hourly:[],
     week:[],
     user: {
@@ -43,6 +42,7 @@ export const reducer = (state,action) =>{
                 icon:payload.icon,
             }
         }
+        case "feedback" : return {...state,feedback:payload}
         case "hourly" : return {...state,hourly:payload}
         case "week" : return {...state,week:payload}
         case "valid" : return {...state,valid:payload}

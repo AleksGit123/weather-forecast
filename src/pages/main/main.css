@@ -3,13 +3,13 @@
     width: 100%;
     display: grid;
     align-content: center;
-    grid-template-columns: 0.2fr 0.7fr 0.7fr 0.4fr;
+    grid-template-columns: 0.2fr 0.7fr 0.7fr;
     grid-template-rows: minmax(60px, auto) minmax(230px, auto) minmax(180px, auto) minmax(180px, auto);
     grid-template-areas:
-        "menu search search week"
-        "menu current current week"
-        "menu hourly hourly week"
-        "menu details details week"
+        "menu search search "
+        "menu current current "
+        "menu hourly hourly "
+        "menu details details "
     ;
     gap: 10px 10px;
     background-color: #0B131E;
@@ -27,6 +27,8 @@
     grid-area: menu;
 }
 
+/* current weater main section */
+
 .current__weather {
     display: flex;
     row-gap: 50px;
@@ -38,13 +40,24 @@
     padding: 10px;
 }
 
+/* hourly weather main section */
 .hourly__weather {
     grid-area: hourly;
 }
 
+/* details(zodiac signs) main section */
 .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     grid-area: details;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-color: transparent transparent;
+    padding: 10px 15px;
 }
+
+/* week forecast */
 
 .week__forecast {
     grid-area: week;
@@ -63,7 +76,6 @@
 }
 
 /* menu__Sect */
-
 .menu__sect {
     display: flex;
     flex-direction: column;

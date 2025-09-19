@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Menu from "./menu/Menu";
 import Hourly from "./hourly/Hourly";
 import Details from "./details/Details";
-import Week from "./Week";
+import Week from "./week/Week";
 import Loader from "../loader/Loader";
 import WeatherContextProvider, {
   useWeatherContext,
@@ -74,11 +74,7 @@ const MainSect = () => {
       </section>
 
       <section className="details">
-        <Details />
-      </section>
-
-      <section className="week__forecast">
-        <Week />
+        <Details loader={loader} setLoader={setLoader} setError={setError} />
       </section>
     </>
   );

@@ -1,12 +1,13 @@
-let getHoroscope = (sign) =>{
-    let response = fetch(`  https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=TODAY`)
+let getHoroscope =async (sign) =>{
+    let response = await fetch(`https://api.api-ninjas.com/v1/horoscope?zodiac=${sign}`)
     
     if(response.ok){
-        return response.json();
+        return await response.json();
     }
     else{
         throw new Error("Fetch Error");
     }
+ 
 }
 
-export default getHoroscope
+export default  getHoroscope

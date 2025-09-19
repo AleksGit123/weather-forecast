@@ -5,6 +5,9 @@ let getData = async (country)=>{
     if(response.ok){
         return response.json();
     }
+    else{
+        throw new Error("Fetch Error");
+    }
 }
 
 export default getData;
