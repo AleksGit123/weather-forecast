@@ -4,41 +4,30 @@ import "./menu.css";
 import settingsGif from "./media/settings.gif";
 import feedbackGif from "./media/feedback.gif";
 import siteLogo from "./media/title-logo.svg";
-import logOutLogo from "./media/log-out.svg";
+import closeIcon from "./media/close.svg";
 import { useNavigate } from "react-router-dom";
+import Feedback from "./feedback/Feedback";
+import Settings from "./settings/Settings";
 const Menu = () => {
-  const [feedBack, setFeedBack] = useState("");
-  const [menuToggle, setMenuToggle] = useState("");
+  const [menuToggle, setMenuToggle] = useState(null);
   let navigate = useNavigate();
   return (
     <>
-      <div className={`menu__window  ${menuToggle}`}>
-        {menuToggle === "feedback" ? (
-          <>
-            <h2 className="menu__text abelFont">F E E D B A C K</h2>
-            <textarea
-              name="feedback"
-              id="feedback"
-              className="feedback__area abelFont"
-            ></textarea>
-            <button className="send__button abelFont">S E N D</button>
-          </>
-        ) : menuToggle === "settings" ? (
-          <>
-            <h2 className="menu__text abelFont">S E T T I N G S</h2>
-            <div className="log__out__div">
-              <img
-                src={logOutLogo}
-                alt="log-out-svg"
-                className="log__out__svg"
-              />
-              <p className="log__out abelFont">Log out</p>
-            </div>
-          </>
-        ) : (
-          ""
-        )}
+      <div
+        className={`menu__window  ${
+          menuToggle === null ? "hidden" : menuToggle ? "feedback" : "settings"
+        } `}
+      >
+        {menuToggle ? <Feedback /> : !menuToggle ? <Settings /> : null}
+
+        <img
+          src={closeIcon}
+          alt=" close-icon"
+          className="close__icon"
+          onClick={() => setMenuToggle(null)}
+        />
       </div>
+
       <div className="icon__div" onClick={() => navigate("/main")}>
         <img src={siteLogo} alt="weathericon" className="site__logo" />
       </div>
@@ -46,7 +35,7 @@ const Menu = () => {
       <div
         className="feedback__div menu__div"
         onClick={() => {
-          setMenuToggle("feedback");
+          setMenuToggle(true);
         }}
       >
         <img src={feedbackGif} alt="feedback-gif" />
@@ -56,7 +45,7 @@ const Menu = () => {
       <div
         className="settings__div  menu__div"
         onClick={() => {
-          setMenuToggle("settings");
+          setMenuToggle(false);
         }}
       >
         <img src={settingsGif} alt="settingsgif" className="settings__icon" />

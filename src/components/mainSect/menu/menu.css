@@ -7,15 +7,35 @@
 
 /* menu window */
 .menu__window {
+    position: relative;
     display: flex;
     flex-direction: column;
     position: absolute;
     left: 175px;
-    border: 2px solid red;
+    border: 2px solid rgb(255, 255, 255);
     height: fit-content;
     background-color: #202b3baa;
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    opacity: 0;
+}
+
+.close__icon {
+    position: absolute;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.close__icon:hover {
+    transform: translateY(-3px);
+}
+
+
+.menu__window.hidden {
+    display: none;
 }
 
 .menu__text {
@@ -45,6 +65,7 @@
     top: 110px;
     width: 330px;
     padding: 10px;
+    opacity: 1;
 }
 
 .send__button {
@@ -90,6 +111,7 @@
 /* settings area */
 
 .settings {
+    opacity: 1;
     top: 200px;
     align-items: baseline;
     row-gap: 20px;
@@ -97,24 +119,26 @@
     padding: 15px 25px;
 }
 
-.settings>div {
-    cursor: pointer;
-    width: fit-content;
-}
-
-.log__out__div {
+.settings__list {
     display: flex;
-    column-gap: 5px;
+    flex-direction: column;
+    row-gap: 25px;
 }
 
-
-.log__out__svg {
-    width: 24px;
-    height: 24px;
+.settings_li {
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
     transition: .4s;
 }
 
-.log__out {
+.settings_li img {
+    width: 24px;
+    height: 24px;
+    transition: .5s;
+}
+
+.settings_li p {
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
@@ -122,14 +146,53 @@
     transition: .4s;
 }
 
-.log__out__div:hover .log__out {
+/* log out */
+.log__out__li {
+    display: flex;
+    column-gap: 5px;
+}
+
+.log__out {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.log__out__li:hover .log__out {
     opacity: 0;
 }
 
-.log__out__div:hover .log__out__svg {
+.log__out__li:hover .log__out__svg {
     transform: translateX(30px);
 }
 
+/* theme change */
+.theme__change__div {
+    display: flex;
+    column-gap: 10px;
+}
+
+
+.dark__mode,
+.light__mode {
+    transition: .3s;
+}
+
+.dark__mode:hover {
+    color: #3e3ea8;
+}
+
+.light__mode:hover {
+    text-shadow: 0 0px 20px #FFFFFF;
+}
+
+.delete__acc__li:hover .delete__user {
+    color: #cb0202;
+
+}
+
+/* site logo */
 
 .site__logo {
     width: 100%;
@@ -146,7 +209,6 @@
 
 .menu__div>p {
     color: #FFFFFF;
-    align-items: center;
     text-align: center;
     transition: .2s;
 }

@@ -21,7 +21,14 @@
     border-radius: 15px;
 }
 
+.main__section.light__mode {
+    background-color: rgb(93, 115, 180);
+}
 
+.main__section.light__mode>section:not(:nth-child(3)) {
+    background-color: transparent;
+    border: 3px solid #2b235a;
+}
 
 .menu__sect {
     grid-area: menu;

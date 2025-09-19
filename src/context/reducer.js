@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
-
 export const initialState = {
+    // weather items
     current: "",
     condition:{
         icon:"",
@@ -11,17 +11,18 @@ export const initialState = {
         country:"Country",
         name:"City",  
     },
-    feedback:"",
     hourly:[],
     week:[],
-    user: {
-        email: "",
-        userName: "",
-        password: "",
-    },
     
+    // registration items  
     log_in : false,
     sign_up:false,
+
+    //feedback 
+    feedback:"",
+
+    // dark mode items
+    darkMode: false,
 }
 
 export const reducer = (state,action) =>{
@@ -29,12 +30,6 @@ export const reducer = (state,action) =>{
 
     switch(type){
         case "current_temp" : return {...state,current:payload}
-        case "location" : return {...state,location:{
-            ...state.location,
-            country:payload.country,
-            name:payload.name,
-     
-        }}
         case "condition" : return {...state,
             condition: {
                 ...state.condition,
@@ -42,13 +37,18 @@ export const reducer = (state,action) =>{
                 icon:payload.icon,
             }
         }
-        case "feedback" : return {...state,feedback:payload}
+        case "location" : return {...state,location:{
+            ...state.location,
+            country:payload.country,
+            name:payload.name,
+     
+        }}
         case "hourly" : return {...state,hourly:payload}
         case "week" : return {...state,week:payload}
-        case "valid" : return {...state,valid:payload}
         case "log_in" : return {...state,log_in:payload}
         case "sign_up" : return {...state,sign_up:payload}
-
+        case "feedback" : return {...state,feedback:payload}
+        case "darkMode"  : return {...state,darkMode:payload}
      default : return state
     }
     
