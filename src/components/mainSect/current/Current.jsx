@@ -19,7 +19,7 @@ const Current = () => {
 
           <h1 className="temp abelFont">{Math.round(state.current)}°C</h1>
         </div>
-        <div className="detail_weather__div">
+        <div className="detail__weather__div">
           <img
             src={!state.condition.icon ? weatherIcon : state.condition.icon}
             alt="weather-icon"

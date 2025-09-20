@@ -30,10 +30,6 @@
     border: 3px solid #2b235a;
 }
 
-.menu__sect {
-    grid-area: menu;
-}
-
 /* current weater main section */
 
 .current__weather {
@@ -88,5 +84,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
-    padding-top: 30px;
+    grid-area: menu;
+    padding: 30px 10px 0 10px;
 }
+
