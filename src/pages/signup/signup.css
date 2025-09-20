@@ -11,7 +11,7 @@
     flex-direction: column;
     row-gap: 40px;
     align-items: center;
-    width: 500px;
+    width: min(90%, 500px);
     height: 450px;
     padding-block: 30px 10px;
     background: rgba(255, 255, 255, 0.126);
@@ -79,4 +79,22 @@ input.correct {
 
 input.incorrect {
     background-color: rgba(148, 42, 42, 0.683);
+}
+
+@media(max-width:375px) {
+    .signup__text {
+        font-size: 35px;
+    }
+
+    input {
+        font-size: 18px;
+    }
+
+    .signup__button {
+        font-size: 24px;
+    }
+
+    .to__log__in {
+        font-size: 18px;
+    }
 }
